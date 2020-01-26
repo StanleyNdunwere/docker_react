@@ -12,6 +12,8 @@ COPY ./ ./
 
 #HERE WE INTRODUCE OUR FINAL CONTAINER -NGINX
 FROM nginx
+#Expose port 80
+EXPOSE 80
 #copy the file into the nginx specific folder
 COPY --from=builder ./app/builder ./usr/share/nginx/html/
 
