@@ -1,0 +1,12 @@
+#choose your base image node:alpine
+FROM node:alpine
+#choose working directory
+WORKDIR /usr/docker_react_dev
+#copy the package .json file for the npm install phase
+COPY ./package.json .
+#run npm install to add all dependencies of the app
+RUN npm install
+#copy the rest of the files to the working directory
+COPY ./ ./
+#start the server to render the react app
+CMD ["npm", "run", "start"]
