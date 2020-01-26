@@ -4,4 +4,6 @@ services:
 
 bofore_install:
     - docker build -t stanleyndunwere/docker_react -f dockerfile.dev
-    
+
+script:
+    - docker run stanleyndunwere/docker_react npm run test -- --coverage
